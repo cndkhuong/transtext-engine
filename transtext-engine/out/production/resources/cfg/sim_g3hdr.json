@@ -1,0 +1,63 @@
+{
+    "name": "sim_g3hdr",
+    "formatter": "com.sess.tx.msg.impl.MsgXml",
+    
+    "fields": [
+        {
+            "name": "FrBICFI",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 11
+            },
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.Tag",
+                "type-args": [
+                    "String=BICFI",
+                    "String=Fr.FIId.FinInstnId"
+                ]
+            }
+        },
+        {
+            "name": "ToBICFI",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 11
+            },
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.Tag",
+                "type-args": [
+                    "String=BICFI",
+                    "String=To.FIId.FinInstnId"
+                ]
+            }
+        },
+        {
+            "name": "BizMsgIdr",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 35
+            },
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.Tag",
+                "type-args": [
+                    "String=BizMsgIdr",
+                    "String=[NIL]"
+                ]
+            }
+        },
+        {
+            "name": "MsgDefIdr",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 35
+            },
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.Tag",
+                "type-args": [
+                    "String=MsgDefIdr",
+                    "String=[NIL]"
+                ]
+            }
+        }
+    ]
+}

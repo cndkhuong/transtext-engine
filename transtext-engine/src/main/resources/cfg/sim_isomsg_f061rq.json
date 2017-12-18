@@ -1,0 +1,321 @@
+{
+    "name": "sim_f061rq",
+    "formatter": "com.sess.tx.msg.impl.MsgStd",
+    
+    "fields": [
+        {
+            "name": "CifNo",
+            "desc": "CIF No",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 7
+            }
+        },
+        {
+            "name": "TrfTy",
+            "desc": "Transfer Type",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 1,
+                "default": "I"
+            }
+        },
+        {
+            "name": "OBankCode",
+            "desc": "Original Bank Code",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeNumStr",
+                "length": 5,
+                "default": "7302"
+            }
+        },
+        {
+            "name": "OBranchNbr",
+            "desc": "Original Branch Number",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeNumStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "ODomicile",
+            "desc": "Original Domicile",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "OAccNo",
+            "desc": "Original Account Number",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 19
+            }
+        },
+        {
+            "name": "OAccCurr",
+            "desc": "Original Account Currency",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "RBankCode",
+            "desc": "Receiving Bank Code",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeNumStr",
+                "length": 5
+            }
+        },
+        {
+            "name": "RBranchNbr",
+            "desc": "Receiving Branch Number",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeNumStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "RAccNo",
+            "desc": "Receiving Account Number",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 19
+            }
+        },
+        {
+            "name": "RAccCurr",
+            "desc": "Receiving Account Currency",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "RDomicile",
+            "desc": "Receiving Domicile",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "RAccName",
+            "desc": "Receiving Account Name",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 20
+            }
+        },
+        {
+            "name": "RefNbr",
+            "desc": "Reference Number",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 15
+            }
+        },
+        {
+            "name": "CustName",
+            "desc": "Receiving Domicile",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 10
+            }
+        },
+        {
+            "name": "TrfAmtInSGD",
+            "desc": "Transfer Amount In SGD",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeNumStr",
+                "length": 15
+            }
+        },
+        {
+            "name": "TrfCurr",
+            "desc": "Transfer Currency",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "TrfDate",
+            "desc": "Transfer Date",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeNumStr",
+                "length": 9
+            }
+        },
+        {
+            "name": "ExchRate",
+            "desc": "Exchange Rate",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeNumStr",
+                "length": 13
+            }
+        },
+        {
+            "name": "EqAmt",
+            "desc": "Equivalent Foreign Amount",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeNumStr",
+                "length": 15
+            }
+        },
+        {
+            "name": "ForCurr",
+            "desc": "Foreign Currency",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "ConUnit",
+            "desc": "Conversion Units",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeNumStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "TranDesc",
+            "desc": "Customer Transaction Description",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 40
+            }
+        },
+        {
+            "name": "EndId",
+            "desc": "End to End Id",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 35
+            }
+        },
+        {
+            "name": "PurposeCode",
+            "desc": "Purpose Code",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 4
+            }
+        },
+        {
+            "name": "ChangeBearer",
+            "desc": "Change Bearer",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 4
+            }
+        },
+        {
+            "name": "MsgId",
+            "desc": "Message id",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 35
+            }
+        },
+        {
+            "name": "ProxyTy",
+            "desc": "Proxy Type",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 12
+            }
+        },
+        {
+            "name": "ProxyValue",
+            "desc": "Proxy Value",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 128
+            }
+        },
+        {
+            "name": "DspName",
+            "desc": "Display Name",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 50
+            }
+        },
+        {
+            "name": "ProxyActNo",
+            "desc": "Proxy Account Number",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 19
+            }
+        },
+        {
+            "name": "ProxyActCur",
+            "desc": "Proxy Account Currency",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "ProxyActNm",
+            "desc": "Proxy Account Name",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 64
+            }
+        },
+        {
+            "name": "OrgName",
+            "desc": "Organization Name",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 64
+            }
+        },
+        {
+            "name": "OrgReg",
+            "desc": "Organization Registration",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 8
+            }
+        },
+        {
+            "name": "FirstName",
+            "desc": "First Name",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 32
+            }
+        },
+        {
+            "name": "MiddleName",
+            "desc": "Middle Name",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 32
+            }
+        },
+        {
+            "name": "LastName",
+            "desc": "Last Name",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 32
+            }
+        },
+        {
+            "name": "RegId",
+            "desc": "Register Id",
+            "format": {
+                "type": "com.sess.tx.msg.field.types.TypeStr",
+                "length": 12
+            }
+        }
+    ]
+}

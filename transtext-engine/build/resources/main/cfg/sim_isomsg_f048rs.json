@@ -1,0 +1,225 @@
+{
+    "name": "sim_f048rs",
+    "formatter": "com.sess.tx.msg.impl.MsgIso",
+    
+    "fields": [
+        {
+            "name": "RespCode",
+            "desc": "Response Code",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 2
+            }
+        },
+        {
+            "name": "RefNbr",
+            "desc": "Reference Number",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeNumStr",
+                "length": 7
+            }
+        },
+        {
+            "name": "RebidNbr",
+            "desc": "Rebid Number",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeNumStr",
+                "length": 5
+            }
+        },
+        {
+            "name": "EoG",
+            "desc": "End Of Group Indicator",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 4
+            }
+        },
+        {
+            "name": "BlockMsgNbr",
+            "desc": "Block Message Number",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeNumStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "SrcId",
+            "desc": "Source Id",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 3,
+                "default": "IBK"
+            }
+        },
+        {
+            "name": "DestId",
+            "desc": "Destination Id",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 3,
+                "default": "IBK"
+            }
+        },
+        {
+            "name": "DataQueue",
+            "desc": "Return Data Queue",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 10
+            }
+        },
+        {
+            "name": "TermId",
+            "desc": "Terminal Id",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 10
+            }
+        },
+        {
+            "name": "BankNbr",
+            "desc": "Bank Number",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeNumStr",
+                "length": 5
+            }
+        },
+        {
+            "name": "BranchNbr",
+            "desc": "Branch Number",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeNumStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "ReviewSuId",
+            "desc": "Review Supervisor Id",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 10
+            }
+        },
+        {
+            "name": "TransmitSuId",
+            "desc": "Transmit Supervisor Id",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 10
+            }
+        },
+        {
+            "name": "HostSuId",
+            "desc": "Host Supervisor Id",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 10
+            }
+        },
+        {
+            "name": "ActCode",
+            "desc": "Action Code",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 1
+            }
+        },
+        {
+            "name": "TrxMode",
+            "desc": "Transaction Mode",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 1
+            }
+        },
+        {
+            "name": "NoRR",
+            "desc": "Number of Records to Retrieve",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeNumStr",
+                "length": 3
+            }
+        },
+        {
+            "name": "More",
+            "desc": "More Record Indicator",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 1
+            }
+        },
+        {
+            "name": "Search",
+            "desc": "Search Method",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 1
+            }
+        },
+        {
+            "name": "ReturnId",
+            "desc": "Return User Id",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 20
+            }
+        },
+        {
+            "name": "AccNo",
+            "desc": "Account Number",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 19
+            }
+        },
+        {
+            "name": "AccTy",
+            "desc": "Account Type",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 1
+            }
+        },
+        {
+            "name": "CifNo",
+            "desc": "CIF Number",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 7
+            }
+        },
+        {
+            "name": "LastKey",
+            "desc": "Last Key",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 80
+            }
+        },
+        {
+            "name": "Filler",
+            "desc": "Filler",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 20
+            }
+        },
+        {
+            "name": "ErrCode",
+            "desc": "Error Code",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 7
+            }
+        },       
+        {
+            "name": "ErrDesc",
+            "desc": "Error Description",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeStr",
+                "length": 40
+            }
+        }
+    ]
+}

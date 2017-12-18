@@ -1,0 +1,637 @@
+{
+    "name": "BPSJSON",
+    "description": "BPS Message",
+    "formatter": "com.sess.tx.msg.impl.MsgJson",
+    
+    "fields": [
+        {
+            "name": "Header.Source.SourceCode",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Source.ClientId",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Bah.OrigBusinessMsgId",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Bah.MsgDefinition",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Bah.FromBIC",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Bah.ToBIC",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Bah.MsgRecipientBIC",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Bah.MsgCreationTms",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Bah.MsgSignature",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Bah.JournalSequence",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Bah.BatchType",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Bah.BatchNumber",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+
+        {
+            "name": "Header.TrancheId",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+
+        {
+            "name": "Header.Trans.SourceBranch",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Trans.TransCode",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Trans.TransDescription",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+
+        {
+            "name": "Header.Menu.MenuId",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Menu.MenuLink",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Menu.ApiLink",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Menu.Action",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+
+        {
+            "name": "Header.OrigBah.OrigBusinessMsgId",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.OrigBah.OrigMsgCreationTms",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.OrigBah.OrigBatchNumber",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.OrigBah.OrigJournalSequence",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+
+        {
+            "name": "Header.Override.OverrideId",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Override.OverrideCodes",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "Header.Override.OverrideDescription",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+
+        {
+            "name": "Body.GroupHead.InstructionEntityNumber",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.CustomerNumber",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.ChannelNumber",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.SettlementDate",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.SettlementCycle",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.MessageID",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.AcceptanceDateTime",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.Product",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.RepeatCounter",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.BusinessDate",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.OANumber",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.OACurrency",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.OAType",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.RANumber",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.RACurrency",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.GroupHead.RAType",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+
+        {
+            "name": "Body.PaymentInformation.TransactionID",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.PaymentInformation.MandateID",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.PaymentInformation.TransactionStatus",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.PaymentInformation.TransactionStatusTimestamp",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.PaymentInformation.TransactionFateID",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.PaymentInformation.TransactionFateReason",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.PaymentInformation.PaymentMethod",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.PaymentInformation.BatchBookingFlag",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.PaymentInformation.NoOfTransactions",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+        {
+            "name": "Body.PaymentInformation.ControlSum",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+
+        {
+            "name": "Body.PaymentTypeInformation.SettlementMethod",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2,
+                "default": "0"
+            }
+        },
+    ]
+}

@@ -1,0 +1,968 @@
+{
+    "name": "STA-JSON",
+    "description": "STA Message",
+    "formatter": "com.sess.tx.msg.impl.MsgJson",
+    
+    "fields": [
+        {
+            "name": "MHDLEN",
+            "desc": "Message Length",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "MHDMTY",
+            "desc": "Message Processing Type",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 3,
+                "default": "*TX"
+            }
+        },
+        {
+            "name": "MHDMID",
+            "desc": "Message Id",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 32
+            }
+        },
+        {
+            "name": "MHDSEQ",
+            "desc": "Message Sequence",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "MHDMBE",
+            "desc": "Begin or End of Message",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 1,
+                "default": "E"
+            }
+        },
+        {
+            "name": "MHDMT1",
+            "desc": "Reference Time",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 4
+            }
+        },
+        {
+            "name": "MHDMT2",
+            "desc": "Reference Time",
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 4
+            }
+        },
+        {
+            "name": "MHDFLP",
+            "desc": "Message Filler",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 32
+            }
+        },
+        {
+            "name": "MHDPID",
+            "desc": "Process Id",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 64
+            }
+        },
+        {
+            "name": "MHDSRV",
+            "desc": "Service Id",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 16
+            }
+        },
+        {
+            "name": "MHDSGN",
+            "desc": "Message Signature",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 32
+            }
+        },
+        {
+            "name": "MAHSSY",
+            "desc": "Source system identifier",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 5
+            }
+        },
+        {
+            "name": "MAHSCY",
+            "desc": "Source system country",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 2
+            }
+        },
+        {
+            "name": "MAHTSY",
+            "desc": "Target system identifier",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 5
+            }
+        },
+        {
+            "name": "MAHTCY",
+            "desc": "Target system country",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 2
+            }
+        },
+        {
+            "name": "MAHAPC",
+            "desc": "Application group",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 2,
+                "default":"CR"
+            }
+        },
+        {
+            "name": "MAHATC",
+            "desc": "Transaction code   ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 5,
+                "default":"R0511"
+            }
+        },
+        {
+            "name": "MAHATY",
+            "desc": "Transaction type   ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 2,
+                "default":"I"
+            }
+        },
+        {
+            "name": "MAHQTI",
+            "desc": "Transaction type   ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 25
+            }
+        },                       
+        {
+            "name": "MAHQTT",
+            "desc": "Requester term type  ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 4,
+                "default":"API"
+            }
+        },
+        {
+            "name": "MAHQUI",
+            "desc": "Requester id  ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 10
+            }
+        },
+        {
+            "name": "MAHQDT",
+            "desc": "Request date  ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 8
+            }
+        },
+        {
+            "name": "MAHQTM",
+            "desc": "Request time  ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 6
+            }
+        },
+        {
+            "name": "MAHQSQ",
+            "desc": "Sequence/Trace number",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 11
+            }
+        },
+        {
+            "name": "MAHOTI",
+            "desc": "Original terminal address",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 25
+            }
+        },
+        {
+            "name": "MAHOTT",
+            "desc": "Original terminal type",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 4
+            }
+        },
+        {
+            "name": "MAHOUI",
+            "desc": "Original user id    ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 10
+            }
+        },
+        {
+            "name": "MAHODT",
+            "desc": "Original date    ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 8
+            }
+        },
+        {
+            "name": "MAHOTM",
+            "desc": "Original time",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 6
+            }
+        },
+        {
+            "name": "MAHOSQ",
+            "desc": "Original sequence   ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 11
+            }
+        },
+        {
+            "name": "MAHREF",
+            "desc": "Reference number",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "charset": "CHARSET_NONE",
+                "length": 32
+            }
+        },
+        {
+            "name": "MAHCCT",
+            "desc": "Cost Center     ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 5
+            }
+        },
+        {
+            "name": "MAHBCH",
+            "desc": "Batch  number",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 5
+            }
+        },
+        {
+            "name": "MAHRDT",
+            "desc": "Response date  ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 8
+            }
+        },
+        {
+            "name": "MAHRTM",
+            "desc": "Response time",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 6
+            }
+        },
+        {
+            "name": "MAHRAC",
+            "desc": "Approval/Reversal Code   ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 11
+            }
+        },
+        {
+            "name": "MAHRSS",
+            "desc": "System response category",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "MAHRCD",
+            "desc": "System response code",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 4
+            }
+        },
+        {
+            "name": "MAHRDS",
+            "desc": "Response description",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 40
+            }
+        },
+        {
+            "name": "MAHDTA",
+            "desc": "",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 298
+            }
+        },
+        {
+            "name": "MAHRRN",
+            "desc": "Record - Return Number",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 5
+            }
+        },
+        {
+            "name": "MAHRFL",
+            "desc": "Record - Y = More record",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1,
+                "default":"N"
+            }
+        },
+        {
+            "name": "MAHRKY",
+            "desc": "Record - Last Key Retrieved",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 80
+            }
+        },
+        {
+            "name": "CRCSNO",
+            "desc": "CIS No",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 19
+            }
+        },
+        {
+            "name": "CRACNO",
+            "desc": "Account number",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 19
+            }
+        },
+        {
+            "name": "CRACNN",
+            "desc": "Account reference",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 35
+            }
+        },
+        {
+            "name": "CRANM1",
+            "desc": "Primary CIF Name 1",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 35
+            }
+        },
+        {
+            "name": "CRANM2",
+            "desc": "Primary CIF Name 2",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 35
+            }
+        },
+        {
+            "name": "CRCRNO",
+            "desc": "Contract no  ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 7
+            }
+        },
+        {
+            "name": "CRMCUR",
+            "desc": "Currency          ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 3
+            }
+        },
+        {
+            "name": "CRACTY",
+            "desc": "Account Type  ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1
+            }
+        },
+        {
+            "name": "CRSDAT",
+            "desc": "Start date",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 8
+            }
+        },
+        {
+            "name": "CREDAT",
+            "desc": "End date",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 8
+            }
+        },
+        {
+            "name": "CRFILL",
+            "desc": "Filler            ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 130
+            }
+        },
+        {
+            "name": "CMCENN",
+            "desc": "Bank number",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "CMCTRN",
+            "desc": "Cost center no ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 5
+            }
+        },
+        {
+            "name": "CRAPDT",
+            "desc": "Product type",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 9
+            }
+        },
+        {
+            "name": "CMSGCD",
+            "desc": "Signatory code ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 9
+            }
+        },
+        {
+            "name": "CMAMGR",
+            "desc": "RM code",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 11
+            }
+        },
+        {
+            "name": "CMINSD",
+            "desc": "Staff account  ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1
+            }
+        },
+        {
+            "name": "CMBENE",
+            "desc": "Staff benefit    ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1
+            }
+        },
+        {
+            "name": "CMMAIL",
+            "desc": "Mailing code",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1
+            }
+        },
+        {
+            "name": "CMCLAS",
+            "desc": "Class code",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1
+            }
+        },
+        {
+            "name": "CMANMA",
+            "desc": "Additional name",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 35
+            }
+        },
+        {
+            "name": "CMFILL",
+            "desc": "For future use ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 26
+            }
+        },
+        {
+            "name": "CZBCST",
+            "desc": "Account status",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1
+            }
+        },
+        {
+            "name": "CZBOST",
+            "desc": "Online status",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1
+            }
+        },
+        {
+            "name": "CZBTYP",
+            "desc": "Acct type",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1
+            }
+        },
+        {
+            "name": "CZBNUM",
+            "desc": "Deposit seq no   ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 7
+            }
+        },
+        {
+            "name": "CZBCUR",
+            "desc": "Deposit currency",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 3
+            }
+        },
+        {
+            "name": "CZBPDT",
+            "desc": "Deposit Product    ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 9
+            }
+        },
+        {
+            "name": "CZBPRV",
+            "desc": "Approved limit",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 19
+            }
+        },
+        {
+            "name": "CZBCML",
+            "desc": "Commitment limit",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 19
+            }
+        },
+        {
+            "name": "CZBLMT",
+            "desc": "Available limit ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 19
+            }
+        },
+        {
+            "name": "CZBAVL",
+            "desc": "Available bal ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 19
+            }
+        },
+        {
+            "name": "CZBAVS",
+            "desc": "Available bal sign",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1
+            }
+        },
+        {
+            "name": "CZBCBL",
+            "desc": "Ledger balance ",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 19
+            }
+        },
+        {
+            "name": "CZBCBS",
+            "desc": "Ledger bal sign +/-",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 1
+            }
+        },
+        {
+            "name": "CZBHDB",
+            "desc": "Earmarked amount",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 19
+            }
+        },
+
+
+
+        {
+            "name": "CZBCLG",
+            "desc": "Clearing amount",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 19
+            }
+        },
+        {
+            "name": "CZBOP8",
+            "desc": "Acct opened date",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 8
+            }
+        },
+        {
+            "name": "CZBFN8",
+            "desc": "Value date",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 8
+            }
+        },
+        {
+            "name": "CZBXP8",
+            "desc": "Maturity  date",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 8
+            }
+        },
+        {
+            "name": "CZBEN8",
+            "desc": "Renewal date",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 8
+            }
+        },
+        {
+            "name": "FILLER",
+            "desc": "Filler",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 11
+            }
+        }
+    ]
+}

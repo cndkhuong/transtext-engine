@@ -1,0 +1,539 @@
+{
+    "name": "FTPJSON",
+    "description": "FTP Message",
+    "formatter": "com.sess.tx.msg.impl.MsgJson",
+
+    "fields": [
+        {
+            "name": "BatchStart.RecordType",
+            "desc": "Record type",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchStart.FileName",
+            "desc": "FileName",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchStart.InterfaceID",
+            "desc": "InterfaceID",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchStart.ProcessInd",
+            "desc": "ProcessInd",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchStart.ProcessTimeStamp",
+            "desc": "ProcessTimeStamp",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchStart.ReturnDescription",
+            "desc": "ReturnDescription",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchStart.Filler",
+            "desc": "Filler",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+
+        {
+            "name": "BatchBody[]BatchHeader.RecordType",
+            "desc": "BatchBody RecordType",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.FileName",
+            "desc": "BatchBody FileName",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.PaymentType",
+            "desc": "BatchBody PaymentType",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.ServiceType",
+            "desc": "BatchBody ServiceType",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.Immediate",
+            "desc": "BatchBody Immediate",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.CompanyID",
+            "desc": "BatchBody CompanyID",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.OriginatingBICCode",
+            "desc": "BatchBody OriginatingBICCode",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.OriginatingAccountNoCurrency",
+            "desc": "BatchBody OriginatingAccountNoCurrency",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.OriginatingAccountNo",
+            "desc": "BatchBody OriginatingAccountNo",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.OriginatingAcName",
+            "desc": "BatchBody OriginatingAcName",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.CreationDate",
+            "desc": "BatchBody CreationDate",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.ValueDate",
+            "desc": "BatchBody ValueDate",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.UltimateOriginatingCustomer",
+            "desc": "BatchBody UltimateOriginatingCustomer",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.BulkCustomerReference",
+            "desc": "BatchBody BulkCustomerReference",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.SoftwareLabel",
+            "desc": "BatchBody SoftwareLabel",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.BatchID",
+            "desc": "BatchBody BatchID",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.OriginalSource",
+            "desc": "BatchBody OriginalSource",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.InternetRef",
+            "desc": "BatchBody InternetRef",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchHeader.Filler",
+            "desc": "BatchBody Filler",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+
+        {
+            "name": "BatchBody[]BatchDetail[]RecordType",
+            "desc": "BatchBody BatchDetail RecordType",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]ReceivingBICCode",
+            "desc": "BatchBody BatchDetail ReceivingBICCode",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]ReceivingAccountNo",
+            "desc": "BatchBody BatchDetail ReceivingAccountNo",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]ReceivingAcName",
+            "desc": "BatchBody BatchDetail ReceivingAcName",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]Currency",
+            "desc": "BatchBody BatchDetail Currency",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]Amount",
+            "desc": "BatchBody BatchDetail Amount",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]EndtoEndID",
+            "desc": "BatchBody BatchDetail EndtoEndID",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]MandateID",
+            "desc": "BatchBody BatchDetail MandateID",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]PurposeCode",
+            "desc": "BatchBody BatchDetail PurposeCode",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]RemittanceInformation",
+            "desc": "BatchBody BatchDetail RemittanceInformation",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]UltimatePayer",
+            "desc": "BatchBody BatchDetail UltimatePayer",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]CustomerReference",
+            "desc": "BatchBody BatchDetail CustomerReference",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]ActualOriginatingAccount",
+            "desc": "BatchBody BatchDetail ActualOriginatingAccount",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]ActualOriginatingAccountName",
+            "desc": "BatchBody BatchDetail ActualOriginatingAccountName",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]SourceBatchIdentifier",
+            "desc": "BatchBody BatchDetail SourceBatchIdentifier",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]SourceTransactionIdentifier",
+            "desc": "BatchBody BatchDetail SourceTransactionIdentifier",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchDetail[]Filler",
+            "desc": "BatchBody BatchDetail Filler",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+
+        {
+            "name": "BatchBody[]BatchTrailer.RecordType",
+            "desc": "BatchBody BatchTrailer Filler",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchTrailer.TotalAmount",
+            "desc": "BatchBody BatchTrailer TotalAmount",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchTrailer.TotalCount",
+            "desc": "BatchBody BatchTrailer TotalCount",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchTrailer.HashTotal",
+            "desc": "BatchBody BatchTrailer HashTotal",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        },
+        {
+            "name": "BatchBody[]BatchTrailer.Filler",
+            "desc": "BatchBody BatchTrailer Filler",
+            "packager": {
+                "type": "com.sess.tx.msg.field.packager.LengthFixed"
+            },
+            "format": {
+                "type": "com.sess.tx.msg.types.TypeJson",
+                "length": 2
+            }
+        }
+    ]
+}
