@@ -113,37 +113,40 @@ class MsgJson : Msg {
     }
 
     override fun toString(): String {
-        var json = mutableMapOf<String, Any?>()
+        var str = "{}"
         for(f in fields){
             val b = f as BaseField
-            val seg = f.id.split("""[\.|[\d\]|](\w*)""".toRegex())
-            var index = 0
-            var element =  mutableMapOf<String, Any?>()
-            for(key in seg){
-                if(index == 0) {
-                    if(json.containsKey(key))
-                        element = json.get(key) as MutableMap<String, Any?>
-                    else {
-                        element = mutableMapOf<String, Any?>()
-                        json.put(key, element)
-                    }
-                }else {
-
-                    if(index == seg.size-1)
-                        element.put(key, String(f.data().filterNotNull().toByteArray()))
-                    else {
-                        element.put(key, if(element.containsKey(key)) element.get(key) else mutableMapOf<String, Any?>())
-                        element = element.get(key) as MutableMap<String, Any?>
-                    }
-                }
-
-
-                index++
-            }
+            f.pack(str.toByteArray().toTypedArray() as Array<Byte?>, 0)
+//            val seg = f.id.split("""[\.|[\d\]|](\w*)""".toRegex())
+//            var index = 0
+//            var element =  mutableMapOf<String, Any?>()
+//            for(key in seg){
+//                if(index == 0) {
+//                    if(json.containsKey(key))
+//                        element = json.get(key) as MutableMap<String, Any?>
+//                    else {
+//                        element = mutableMapOf<String, Any?>()
+//                        json.put(key, element)
+//                    }
+//                }else {
+//
+//                    if(index == seg.size-1)
+//                        element.put(key, String(f.data().filterNotNull().toByteArray()))
+//                    else {
+//                        element.put(key, if(element.containsKey(key)) element.get(key) else mutableMapOf<String, Any?>())
+//                        element = element.get(key) as MutableMap<String, Any?>
+//                    }
+//                }
+//
+//                index++
+//            }
         }
 
-        return Gson().toJson(json)
+        return str
     }
+
+
+
     companion object {
         var threadLocalValue = ThreadLocal<JsonObject>()
     }

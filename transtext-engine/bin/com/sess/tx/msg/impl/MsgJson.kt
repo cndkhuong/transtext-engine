@@ -8,6 +8,10 @@ import com.sess.tx.msg.MsgException
 import com.sess.tx.msg.field.BaseField
 import com.sess.tx.msg.field.Field
 import com.sess.tx.msg.field.FieldSet
+import com.sess.tx.msg.field.impl.FieldArray
+import com.sess.tx.msg.field.impl.FieldJson
+import com.sess.tx.msg.field.impl.FieldStr
+import com.sess.tx.msg.format.FieldFormat
 import com.sess.tx.msg.format.MsgFormat
 
 /**
@@ -45,16 +49,59 @@ class MsgJson : Msg {
     }
 
     override fun unpack(from: Array<Byte?>, fromPos: Int): Int {
+        var gson: JsonObject;
         if(MsgJson.threadLocalValue.get() == null){
-            var gson: JsonObject = Gson().fromJson(String(from.filterNotNull().toByteArray()), JsonObject::class.java)
+            gson = Gson().fromJson(String(from.filterNotNull().toByteArray()), JsonObject::class.java)
             MsgJson.threadLocalValue.set(gson)
+        }else{
+            gson = MsgJson.threadLocalValue.get()
         }
         var npos: Int = fromPos
+
         for(i in fields.indices) {
-            npos = format.fieldFormats[i].packager.unpack(fields[i] as FieldSet, from, npos)
+            val field = fields[i]
+            val fieldFormat = format.fieldFormats[i]
+            if(field.id.contains("[]"))
+                buildFields(gson, field, fieldFormat)
         }
+
+        fields.removeIf{ it.id.contains("[]") }
+
+        for(i in fields.indices) {
+            if(fields[i].id.contains("[]")) {
+                fields.removeAt(i)
+            }else {
+                npos = format.fieldFormats[i].packager.unpack(fields[i] as FieldSet, from, npos)
+            }
+        }
+
         _length = npos
         return npos
+    }
+
+    private fun buildFields(gson:JsonObject, field:Field, fieldFormat:FieldFormat){
+        if(field.id.contains("[]")) {
+            fields.remove(field)
+            format.fieldFormats.remove(fieldFormat)
+            val arr = gson.getAsJsonArray(field.id.substringBefore("["))
+            var subPos: Int = 0
+            for(elementValue in arr) {
+                val idElement = field.id.replaceFirst("[]", "[${subPos}]")
+                val newField = (field as FieldArray).copy(id = idElement)
+
+                val newFieldFormat = fieldFormat.copy(name = idElement, field = idElement)
+
+                if(newField.id.contains("[]")) {
+                    fields.remove(field)
+                    format.fieldFormats.remove(fieldFormat)
+                    return buildFields(gson, newField, newFieldFormat)
+                }else{
+                    fields.add(newField)
+                    format.fieldFormats.add(newFieldFormat)
+                }
+                subPos += 1
+            }
+        }
     }
 
     override fun pack(to: Array<Byte?>, toPos: Int): Int {
@@ -69,7 +116,7 @@ class MsgJson : Msg {
         var json = mutableMapOf<String, Any?>()
         for(f in fields){
             val b = f as BaseField
-            val seg = f.id.split(".")
+            val seg = f.id.split("""[\.|[\d\]|](\w*)""".toRegex())
             var index = 0
             var element =  mutableMapOf<String, Any?>()
             for(key in seg){

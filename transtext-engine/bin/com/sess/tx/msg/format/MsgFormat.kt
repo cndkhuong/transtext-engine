@@ -7,7 +7,7 @@ import com.sess.tx.msg.format.Format
 /**
  * Created by kevin on 7/11/17.
  */
-class MsgFormat(val name: String,
+data class MsgFormat(val name: String,
                 val desc: String,
                 val formatterType: Class<Msg>) : Format(name, desc) {
 

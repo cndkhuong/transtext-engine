@@ -96,4 +96,5 @@ enum class CHARSET(val id:String) {
         "com.sess.tx.msg.format.charset.EBCDIC" -> CHARSET_EBCDIC
         else -> CHARSET_NONE
     }
+
 }

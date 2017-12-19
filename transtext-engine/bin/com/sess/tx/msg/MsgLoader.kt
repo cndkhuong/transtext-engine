@@ -15,6 +15,7 @@ import java.io.FileReader
 import com.google.gson.stream.JsonReader
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.sess.tx.msg.types.TypeStr
 import java.util.*
 
 
@@ -61,7 +62,7 @@ object MsgLoader : TxLogging() {
             else
                 return a[1]
         }
-        else if (a[0] == "Charset") {
+        else if (a[0].toUpperCase() == "CHARSET") {
             return CHARSET.valueOf(a[1])
         }
         else if (a[0] == "Type") {
@@ -84,17 +85,18 @@ object MsgLoader : TxLogging() {
             val maskString: String? = if (packager.isEmpty()) null else packager["mask"]?.toString() ?: null
             val mask: Byte = if (packager.isEmpty()) 0x00.toByte() else if (maskString == null) 0x00.toByte() else maskString[0].toByte()
 
-            val args: Array<Any> = if (packager.isEmpty() || packager["type-args"] == null) {
+            val args: Array<Any?> = if (packager.isEmpty() || packager["type-args"] == null) {
                 arrayOf(mask)
             }
             else {
 
-                var a: MutableList<Any> = mutableListOf<Any>()
+                var a: MutableList<Any?> = mutableListOf<Any?>()
                 val b: List<String> = packager.get("type-args") as List<String>
-                for (arg in b) {
-                    a + parseValue(arg, classLoader)
-                }
                 a.add(mask)
+                for (arg in b) {
+                    a.add(parseValue(arg, classLoader))
+                }
+
                 a.toTypedArray()
             }
 
@@ -102,7 +104,7 @@ object MsgLoader : TxLogging() {
         val classLength: Class<Packager> = classLoader.loadClass(clazz) as Class<Packager>
         val ctorLength: Constructor<Packager> = classLength.getConstructors()[0] as Constructor<Packager>
 
-        return ctorLength.newInstance(args[0]) //TODO : miss params if (args.size > 1)  args else args[0].toString().toByte()
+        return ctorLength.newInstance(args[0])
     }
 
     fun getFieldFormat(fmtId: String, classLoader: TxClassLoader, field: Map<String, Any>) : FieldFormat  {

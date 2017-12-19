@@ -2,7 +2,7 @@ package com.sess.tx.msg.field.impl
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.google.gson.JsonElement
+import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.jayway.jsonpath.Configuration
 import com.jayway.jsonpath.JsonPath
@@ -18,16 +18,12 @@ import com.sess.tx.msg.types.Type
 import com.sess.tx.msg.types.TypeByte
 import java.util.*
 
-/**
- * Created by kevin on 7/10/17.
- */
-data class FieldJson(override var id: String,
-                     override val min: Int,
-                     override val max: Int,
-                     val charset: CHARSET = CHARSET.CHARSET_NONE,
-                     override var tranformId:String,
-                     override val default:String?) : BaseField(id, min, max, tranformId, default) {
-
+data class FieldArray(override var id: String,
+                      override val min: Int,
+                      override val max: Int,
+                      val charset: CHARSET = CHARSET.CHARSET_NONE,
+                      override var tranformId:String,
+                      override val default:String?) : BaseField(id, min, max, tranformId, default) {
 
     protected val t: Type = TypeByte()
     protected var _length: Int = max
@@ -66,7 +62,7 @@ data class FieldJson(override var id: String,
     }
 
     override fun pack(to: Array<Byte?>, toPos: Int): Int {
-        val json:JsonObject = if(to.filterNotNull().size <= 0) Gson().fromJson("{}", JsonObject::class.java) else Gson().fromJson(String( to.filterNotNull().toByteArray() ), JsonObject::class.java)
+        val json: JsonObject = if(to.filterNotNull().size <= 0) Gson().fromJson("{}", JsonObject::class.java) else Gson().fromJson(String( to.filterNotNull().toByteArray() ), JsonObject::class.java)
         if (json.isJsonNull) throw MsgException("<$this.pack> json format not corrected")
 
         val configuration = Configuration.defaultConfiguration()
@@ -99,6 +95,7 @@ data class FieldJson(override var id: String,
         }
         jsonPath.jsonString()
         val bytes =  GsonBuilder().create().toJson(json).toByteArray()
+//        val bytes =  jsonPath.jsonString().toByteArray()
         if(to.size > bytes.size){
             for(i in 0 until to.size) {
                 if( i < bytes.size) {
@@ -121,31 +118,37 @@ data class FieldJson(override var id: String,
 
     override fun unpack(from: Array<Byte?>, fromPos: Int, length: Int): Int {
 
-        var element:String? = null
-
         var obj: JsonObject = MsgJson.threadLocalValue.get()
         if (obj.isJsonNull) throw MsgException("<$this.pack> json format not corrected")
-        val seg = id.split(".")
-        var index=0
-        for (key in seg) {
-            index++
-            if (obj != null) {
-                if(index < seg.size) {
-                    obj = obj.get(key).asJsonObject
-                } else {
-                    element = obj.get(key)?.asString
-                }
-            }
-        }
-        if(element != null) {
-            _length = set(element.toByteArray().toTypedArray())
-            _data = arrayOfNulls(_length)
-            for (i in 0.._length-1){
-                _data[i] = element.toCharArray()[i].toByte()
-            }
+        var value = ""
+        try {
+            value = unpackSub(obj, id, id.substringBefore("["), -1) as String
+        }catch (e:Exception ){
+            print(id)
         }
 
+        _data = value.toByteArray().toTypedArray() as Array<Byte?>
+        _length = value.length
         return _length
+    }
+
+    private fun unpackSub(fromObj: Any, path: String, id: String, index: Int) : Any{
+
+        val jsonValue = if(index >= 0) (fromObj as JsonArray).get(index).asJsonObject.get(id) else (fromObj as JsonObject).get(id)
+        if(jsonValue.isJsonPrimitive) return jsonValue.toString()
+        else {
+            val nextPath = """(?<=${id})(?s)(.*$)""".toRegex().find(path)?.groupValues?.get(0)
+            val nextId = if(nextPath?.split("""[\.|\]](\w*)""".toRegex())?.size!! > 2 )
+                                    """(\.|\])(.*?)(\.|\[)""".toRegex().find(nextPath!!)?.groupValues?.get(2)
+                                 else
+                                    """[\.|\]](\w*)""".toRegex().find(nextPath)?.groupValues?.get(1)
+            if(jsonValue.isJsonArray) {
+                val nextIndex = "[\\d]".toRegex().find(nextPath!!)?.groupValues?.get(0)?.toInt()
+                return unpackSub(jsonValue as JsonArray, nextPath, nextId!!, nextIndex!!)
+            }else {
+                return unpackSub(jsonValue as JsonObject, nextPath!!, nextId!!, -1)
+            }
+        }
     }
 
     override fun default(): Int {
@@ -185,5 +188,4 @@ data class FieldJson(override var id: String,
     override fun unset(): Unit {_length = 0}
 
     override fun toString(): String = "${this.javaClass.name}[$id]"
-
 }

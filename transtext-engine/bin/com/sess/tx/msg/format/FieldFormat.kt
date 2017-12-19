@@ -8,7 +8,7 @@ import com.sess.tx.msg.types.Type
 /**
  * Created by kevin on 7/11/17.
  */
-class FieldFormat(val name: String,
+data class FieldFormat(val name: String,
                   val field: String,
                   val desc: String,
                   val ftype: Type,
